@@ -10,19 +10,23 @@ var LowerCaseC= ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p'
 // Array for Upper Case Characters
 var UpperCaseC= ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
 
+// Prompt for Password Requirements
 function PasswordCriteria() {
   var length = parseInt (
     prompt("How many characters would you like your password to contain"),
     10
   );
+  // Has to at least be a number
   if (Number.isNaN(length)) {
     alert('Password length requires a number');
     return null;
   }
+  // Less than 128 Characters, Fails otherwise
   if (length > 128) {
     alert('Password must be less than 129 characters');
     return null;
   }
+  // At least 8 Characters, Fails otherwise
   if (length < 8) {
     alert('Password must be more than 7 characters');
     return null;
