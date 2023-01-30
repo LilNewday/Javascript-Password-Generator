@@ -1,4 +1,3 @@
-// Assignment code here
 // Array for Special Characters
 var SpecialC= ['~','!','@','#','$','%','^','&','*','(',')','-','_','+','[',']','{','}','\\','|',';',':',',','<','.','>','?','/','`','=','"'];
 
@@ -6,10 +5,29 @@ var SpecialC= ['~','!','@','#','$','%','^','&','*','(',')','-','_','+','[',']','
 var NumericC= ['0','1','2','3','4','5','6','7','8','9'];
 
 // Array for Lower Case Characters
-var LowerCasedC= ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+var LowerCaseC= ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 
 // Array for Upper Case Characters
-var UpperCasedC= ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+var UpperCaseC= ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+
+function PasswordCriteria() {
+  var length = parseInt (
+    prompt("How many characters would you like your password to contain"),
+    10
+  );
+  if (Number.isNaN(length)) {
+    alert('Password length requires a number');
+    return null;
+  }
+  if (length > 128) {
+    alert('Password must be less than 129 characters');
+    return null;
+  }
+  if (length < 8) {
+    alert('Password must be more than 7 characters');
+    return null;
+  }
+}
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
