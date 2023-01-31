@@ -31,6 +31,21 @@ function PasswordCriteria() {
     alert('Password must be more than 7 characters');
     return null;
   }
+
+  var confirmSpecial = confirm('Click OK to confirm special characters');
+  var confirmNumbers = confirm('Click OK to confirm numeric characters');
+  var confirmLowercased = confirm('Click OK to confirm lowercased characters');
+  var confirmUppercased = confirm('Click OK to confirm uppercased characters');
+
+  if (
+    confirmSpecial === false &&
+    confirmNumbers === false &&
+    confirmLowercased === false &&
+    confirmUppercased === false
+  ) {
+    alert('You are required to select at least one character type');
+    return null;
+  }
 }
 
 // Get references to the #generate element
