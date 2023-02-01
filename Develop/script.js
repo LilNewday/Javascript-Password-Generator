@@ -32,11 +32,16 @@ function PasswordCriteria() {
     return null;
   }
 
+// Confirm inclusion of Special Characters
   var confirmSpecial = confirm('Click OK to confirm special characters');
+// Confirm inclusion of Numeric Characters
   var confirmNumbers = confirm('Click OK to confirm numeric characters');
+// Confirm inclusion of Lowercased Characters
   var confirmLowercased = confirm('Click OK to confirm lowercased characters');
+// Confirm inclusion of Uppercased Characters
   var confirmUppercased = confirm('Click OK to confirm uppercased characters');
 
+// Checks to make sure at least one Character was selected
   if (
     confirmSpecial === false &&
     confirmNumbers === false &&
