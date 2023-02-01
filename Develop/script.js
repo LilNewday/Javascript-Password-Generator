@@ -51,7 +51,7 @@ function PasswordCriteria() {
     alert('You are required to select at least one character type');
     return null;
   }
-  
+// Stores user input
   var Choice = {
     length: length,
     confirmSpecial: confirmSpecial,
