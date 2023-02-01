@@ -51,6 +51,16 @@ function PasswordCriteria() {
     alert('You are required to select at least one character type');
     return null;
   }
+  
+  var Choice = {
+    length: length,
+    confirmSpecial: confirmSpecial,
+    confirmNumbers: confirmNumbers,
+    confirmLowercased: confirmLowercased,
+    confirmUppercased: confirmUppercased,
+  };
+
+  return Choice;
 }
 
 // Get references to the #generate element
