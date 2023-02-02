@@ -63,6 +63,13 @@ function PasswordCriteria() {
   return Choice;
 }
 
+function Random(array) {
+  var RandomIndex = Math.floor(Math.random() * array.length);
+  var RandomElement = array[RandomIndex];
+
+  return RandomElement;
+}
+
 function generatePassword() {
   var options = Choices();
   var result = [];
