@@ -51,7 +51,7 @@ function PasswordCriteria() {
     alert('You are required to select at least one character type');
     return null;
   }
-  
+//Stores user input
   var Choice = {
     length: length,
     confirmSpecial: confirmSpecial,
@@ -63,6 +63,12 @@ function PasswordCriteria() {
   return Choice;
 }
 
+function generatePassword() {
+  var options = Choices();
+  var result = [];
+  var possiblecharacters = [];
+  var guaranteedcharacters = [];
+}
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
