@@ -97,6 +97,11 @@ function generatePassword() {
     possiblecharacters = possiblecharacters.concat(UpperCaseC);
     guaranteedcharacters.push(Random(UpperCaseC));
   }
+
+  for (var i = 0; i < options.length; i++) {
+    var possiblecharacters = Random(possiblecharacters);
+    result.push(possiblecharacters);
+  }
   
   for (var i = 0; i < guaranteedcharacters.length; i++) {
     result [i] = guaranteedcharacters[i];
