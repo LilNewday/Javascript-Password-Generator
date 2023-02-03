@@ -71,10 +71,38 @@ function Random(array) {
 }
 
 function generatePassword() {
-  var options = Choices();
+  var options = PasswordCriteria();
   var result = [];
   var possiblecharacters = [];
   var guaranteedcharacters = [];
+    
+  if (!options) return null;
+  
+  if (options.confirmSpecial) {
+    possiblecharacters = possiblecharacters.concat(SpecialC);
+    guaranteedcharacters.push(Random(SpecialC));
+  }
+  
+  if (options.confirmNumbers) {
+    possiblecharacters = possiblecharacters.concat(NumericC);
+    guaranteedcharacters.push(Random(NumericC));
+  }
+  
+  if (options.confirmLowercased) {
+    possiblecharacters = possiblecharacters.concat(LowerCaseC);
+    guaranteedcharacters.push(Random(LowerCaseC));
+  }
+  
+  if (options.confirmUppercased) {
+    possiblecharacters = possiblecharacters.concat(UpperCaseC);
+    guaranteedcharacters.push(Random(UpperCaseC));
+  }
+  
+  for (var i = 0; i < guaranteedcharacters.length; i++) {
+    result [i] = guaranteedcharacters[i];
+  }
+  
+  return result.join('');
 }
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
